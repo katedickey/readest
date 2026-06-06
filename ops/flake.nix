@@ -40,17 +40,17 @@
         androidConditionalPackages = if pkgs.system != "aarch64-darwin" then [ pkgs.android-studio ] else [ ];
         commonPackages = with pkgs; [
           pnpm
-          nodejs_22
+          nodejs_24
           clang
           pkg-config
-          (pkgs.fenix.complete.withComponents [
+          (pkgs.fenix.stable.withComponents [
             "cargo"
             "clippy"
             "rust-src"
             "rustc"
             "rustfmt"
           ])
-          pkgs.rust-analyzer-nightly
+          pkgs.fenix.stable.rust-analyzer
           xdg-utils
         ];
 
