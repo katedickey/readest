@@ -1831,5 +1831,11 @@
   "Book file is not available locally": "ملف الكتاب غير متوفر محليًا",
   "Failed to send book": "فشل إرسال الكتاب",
   "Send": "إرسال",
-  "Highlight Current Sentence": "تمييز الجملة الحالية"
+  "Highlight Current Sentence": "تمييز الجملة الحالية",
+  "Could not reach server": "تعذّر الوصول إلى الخادم",
+  "Not a Readest server": "ليس خادم Readest",
+  "Server found! Press Save to apply — the app will reload.": "تم العثور على الخادم! اضغط حفظ للتطبيق — سيتم إعادة تحميل التطبيق.",
+  "This will remove the server configuration and reload the app. Press Save to confirm.": "سيؤدي هذا إلى إزالة تكوين الخادم وإعادة تحميل التطبيق. اضغط حفظ للتأكيد.",
+  "Custom Server…": "خادم مخصص…",
+  "Custom Server": "خادم مخصص"
 }

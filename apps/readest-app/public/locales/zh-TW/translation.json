@@ -1666,5 +1666,11 @@
   "Book file is not available locally": "本機沒有此書籍檔案",
   "Failed to send book": "傳送書籍失敗",
   "Send": "傳送",
-  "Highlight Current Sentence": "醒目標示目前句子"
+  "Highlight Current Sentence": "醒目標示目前句子",
+  "Could not reach server": "無法連接到伺服器",
+  "Not a Readest server": "不是 Readest 伺服器",
+  "Server found! Press Save to apply — the app will reload.": "伺服器已找到！點擊儲存以套用 — 應用程式將重新載入。",
+  "This will remove the server configuration and reload the app. Press Save to confirm.": "這將刪除伺服器設定並重新載入應用程式。點擊儲存以確認。",
+  "Custom Server…": "自訂伺服器…",
+  "Custom Server": "自訂伺服器"
 }

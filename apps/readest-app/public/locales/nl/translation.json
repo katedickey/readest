@@ -1699,5 +1699,11 @@
   "Book file is not available locally": "Boekbestand is niet lokaal beschikbaar",
   "Failed to send book": "Verzenden van boek mislukt",
   "Send": "Verzenden",
-  "Highlight Current Sentence": "Huidige zin markeren"
+  "Highlight Current Sentence": "Huidige zin markeren",
+  "Could not reach server": "Kan server niet bereiken",
+  "Not a Readest server": "Geen Readest-server",
+  "Server found! Press Save to apply — the app will reload.": "Server gevonden! Druk op Opslaan om toe te passen — de app wordt opnieuw geladen.",
+  "This will remove the server configuration and reload the app. Press Save to confirm.": "Dit verwijdert de serverconfiguratie en laadt de app opnieuw. Druk op Opslaan om te bevestigen.",
+  "Custom Server…": "Aangepaste server…",
+  "Custom Server": "Aangepaste server"
 }

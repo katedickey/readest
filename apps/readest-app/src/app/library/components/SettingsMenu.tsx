@@ -24,6 +24,7 @@ import { navigateToLogin, navigateToProfile } from '@/utils/nav';
 import { tauriHandleSetAlwaysOnTop, tauriHandleToggleFullScreen } from '@/utils/window';
 import { optInTelemetry, optOutTelemetry } from '@/utils/telemetry';
 import { setAboutDialogVisible } from '@/components/AboutWindow';
+import { setCustomServerDialogVisible } from '@/components/CustomServerWindow';
 import { setMigrateDataDirDialogVisible } from '@/app/library/components/MigrateDataWindow';
 import { requestStoragePermission } from '@/utils/permission';
 import { saveSysSettings } from '@/helpers/settings';
@@ -440,6 +441,15 @@ const SettingsMenu: React.FC<SettingsMenuProps> = ({ onPullLibrary, setIsDropdow
           />
           {appService?.isMobileApp && (
             <MenuItem label={_('Manage Cache')} onClick={handleManageCache} />
+          )}
+          {isTauriAppPlatform() && (
+            <MenuItem
+              label={_('Custom Server…')}
+              onClick={() => {
+                setCustomServerDialogVisible(true);
+                setIsDropdownOpen?.(false);
+              }}
+            />
           )}
           {!isPinEnabled && (
             <MenuItem

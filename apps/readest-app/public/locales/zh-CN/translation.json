@@ -1666,5 +1666,11 @@
   "Book file is not available locally": "本地没有该图书文件",
   "Failed to send book": "发送图书失败",
   "Send": "发送",
-  "Highlight Current Sentence": "高亮当前句子"
+  "Highlight Current Sentence": "高亮当前句子",
+  "Could not reach server": "无法连接到服务器",
+  "Not a Readest server": "不是 Readest 服务器",
+  "Server found! Press Save to apply — the app will reload.": "服务器已找到！点击保存以应用 — 应用将重新加载。",
+  "This will remove the server configuration and reload the app. Press Save to confirm.": "这将删除服务器配置并重新加载应用。点击保存以确认。",
+  "Custom Server…": "自定义服务器…",
+  "Custom Server": "自定义服务器"
 }

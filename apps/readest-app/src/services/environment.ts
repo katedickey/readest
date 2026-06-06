@@ -12,7 +12,14 @@ export const isTauriAppPlatform = () => process.env['NEXT_PUBLIC_APP_PLATFORM'] 
 export const isWebAppPlatform = () => process.env['NEXT_PUBLIC_APP_PLATFORM'] === 'web';
 export const hasCli = () => window.__READEST_CLI_ACCESS === true;
 export const isPWA = () => window.matchMedia('(display-mode: standalone)').matches;
+
+let overrideBaseUrl: string | undefined;
+export const setBaseUrlOverride = (url: string | undefined) => {
+  overrideBaseUrl = url || undefined;
+};
+
 export const getBaseUrl = () =>
+  overrideBaseUrl ??
   getRuntimeConfig()?.apiBaseUrl ??
   process.env['API_BASE_URL'] ??
   process.env['NEXT_PUBLIC_API_BASE_URL'] ??

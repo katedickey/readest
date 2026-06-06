@@ -1732,5 +1732,11 @@
   "Book file is not available locally": "קובץ הספר אינו זמין באופן מקומי",
   "Failed to send book": "שליחת הספר נכשלה",
   "Send": "שליחה",
-  "Highlight Current Sentence": "הדגשת המשפט הנוכחי"
+  "Highlight Current Sentence": "הדגשת המשפט הנוכחי",
+  "Could not reach server": "לא ניתן להגיע לשרת",
+  "Not a Readest server": "אינו שרת Readest",
+  "Server found! Press Save to apply — the app will reload.": "השרת נמצא! לחץ שמור להחלה — האפליקציה תיטען מחדש.",
+  "This will remove the server configuration and reload the app. Press Save to confirm.": "פעולה זו תסיר את תצורת השרת ותטען מחדש את האפליקציה. לחץ שמור לאישור.",
+  "Custom Server…": "שרת מותאם אישית…",
+  "Custom Server": "שרת מותאם אישית"
 }

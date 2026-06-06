@@ -1666,5 +1666,11 @@
   "Book file is not available locally": "Berkas buku tidak tersedia secara lokal",
   "Failed to send book": "Gagal mengirim buku",
   "Send": "Kirim",
-  "Highlight Current Sentence": "Sorot kalimat saat ini"
+  "Highlight Current Sentence": "Sorot kalimat saat ini",
+  "Could not reach server": "Tidak dapat menjangkau server",
+  "Not a Readest server": "Bukan server Readest",
+  "Server found! Press Save to apply — the app will reload.": "Server ditemukan! Tekan Simpan untuk menerapkan — aplikasi akan dimuat ulang.",
+  "This will remove the server configuration and reload the app. Press Save to confirm.": "Ini akan menghapus konfigurasi server dan memuat ulang aplikasi. Tekan Simpan untuk mengonfirmasi.",
+  "Custom Server…": "Server kustom…",
+  "Custom Server": "Server kustom"
 }

@@ -94,6 +94,17 @@ export interface HardcoverSettings {
   lastSyncedAt: number;
 }
 
+export interface CustomServerSettings {
+  serverUrl: string;
+  supabaseUrl?: string;
+  supabaseAnonKey?: string;
+  objectStorageType?: string;
+  s3Endpoint?: string;
+  s3BucketName?: string;
+  s3Region?: string;
+  apiBaseUrl?: string;
+}
+
 export interface WebDAVSettings {
   enabled: boolean;
   serverUrl: string;
@@ -338,6 +349,7 @@ export interface SystemSettings {
   readwise: ReadwiseSettings;
   hardcover: HardcoverSettings;
   webdav: WebDAVSettings;
+  customServer?: CustomServerSettings;
 
   aiSettings: AISettings;
   /**

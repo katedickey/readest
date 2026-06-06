@@ -1699,5 +1699,11 @@
   "Book file is not available locally": "فایل کتاب به صورت محلی در دسترس نیست",
   "Failed to send book": "ارسال کتاب ناموفق بود",
   "Send": "ارسال",
-  "Highlight Current Sentence": "برجسته‌سازی جملهٔ فعلی"
+  "Highlight Current Sentence": "برجسته‌سازی جملهٔ فعلی",
+  "Could not reach server": "اتصال به سرور ممکن نیست",
+  "Not a Readest server": "این یک سرور Readest نیست",
+  "Server found! Press Save to apply — the app will reload.": "سرور پیدا شد! برای اعمال، ذخیره را فشار دهید — برنامه مجدداً بارگذاری می‌شود.",
+  "This will remove the server configuration and reload the app. Press Save to confirm.": "این کار پیکربندی سرور را حذف کرده و برنامه را مجدداً بارگذاری می‌کند. برای تأیید، ذخیره را فشار دهید.",
+  "Custom Server…": "سرور سفارشی…",
+  "Custom Server": "سرور سفارشی"
 }

@@ -1732,5 +1732,11 @@
   "Book file is not available locally": "Le fichier du livre n'est pas disponible localement",
   "Failed to send book": "Échec de l'envoi du livre",
   "Send": "Envoyer",
-  "Highlight Current Sentence": "Surligner la phrase actuelle"
+  "Highlight Current Sentence": "Surligner la phrase actuelle",
+  "Could not reach server": "Impossible d'atteindre le serveur",
+  "Not a Readest server": "Pas un serveur Readest",
+  "Server found! Press Save to apply — the app will reload.": "Serveur trouvé ! Appuyez sur Enregistrer pour appliquer — l'application va se recharger.",
+  "This will remove the server configuration and reload the app. Press Save to confirm.": "Cela supprimera la configuration du serveur et rechargera l'application. Appuyez sur Enregistrer pour confirmer.",
+  "Custom Server…": "Serveur personnalisé…",
+  "Custom Server": "Serveur personnalisé"
 }

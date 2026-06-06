@@ -1699,5 +1699,11 @@
   "Book file is not available locally": "A könyvfájl nem érhető el helyileg",
   "Failed to send book": "A könyv küldése sikertelen",
   "Send": "Küldés",
-  "Highlight Current Sentence": "Aktuális mondat kiemelése"
+  "Highlight Current Sentence": "Aktuális mondat kiemelése",
+  "Could not reach server": "A szerver nem érhető el",
+  "Not a Readest server": "Nem Readest szerver",
+  "Server found! Press Save to apply — the app will reload.": "Szerver megtalálva! Nyomja meg a Mentés gombot az alkalmazáshoz — az alkalmazás újra fog tölteni.",
+  "This will remove the server configuration and reload the app. Press Save to confirm.": "Ez eltávolítja a szerver konfigurációját és újra tölti az alkalmazást. A megerősítéshez nyomja meg a Mentés gombot.",
+  "Custom Server…": "Egyéni szerver…",
+  "Custom Server": "Egyéni szerver"
 }

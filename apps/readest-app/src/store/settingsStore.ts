@@ -1,7 +1,7 @@
 import i18n from '@/i18n/i18n';
 import { create } from 'zustand';
 import { SystemSettings } from '@/types/settings';
-import { EnvConfigType } from '@/services/environment';
+import { EnvConfigType, setBaseUrlOverride } from '@/services/environment';
 import { initDayjs } from '@/utils/time';
 
 export type FontPanelView = 'main-fonts' | 'custom-fonts';
@@ -46,7 +46,10 @@ export const useSettingsStore = create<SettingsState>((set) => ({
   activeSettingsItemId: null,
   requestedPanel: null,
   requestedSubPage: null,
-  setSettings: (settings) => set({ settings }),
+  setSettings: (settings) => {
+    set({ settings });
+    setBaseUrlOverride(settings.customServer?.apiBaseUrl ?? settings.customServer?.serverUrl);
+  },
   saveSettings: async (envConfig: EnvConfigType, settings: SystemSettings) => {
     const appService = await envConfig.getAppService();
     await appService.saveSettings(settings);

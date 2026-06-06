@@ -1699,5 +1699,11 @@
   "Book file is not available locally": "पुस्तक फ़ाइल स्थानीय रूप से उपलब्ध नहीं है",
   "Failed to send book": "पुस्तक भेजने में विफल",
   "Send": "भेजें",
-  "Highlight Current Sentence": "वर्तमान वाक्य को हाइलाइट करें"
+  "Highlight Current Sentence": "वर्तमान वाक्य को हाइलाइट करें",
+  "Could not reach server": "सर्वर तक नहीं पहुंचा जा सका",
+  "Not a Readest server": "यह Readest सर्वर नहीं है",
+  "Server found! Press Save to apply — the app will reload.": "सर्वर मिल गया! लागू करने के लिए सहेजें दबाएं — ऐप पुनः लोड होगा।",
+  "This will remove the server configuration and reload the app. Press Save to confirm.": "यह सर्वर कॉन्फ़िगरेशन हटा देगा और ऐप को पुनः लोड करेगा। पुष्टि करने के लिए सहेजें दबाएं।",
+  "Custom Server…": "कस्टम सर्वर…",
+  "Custom Server": "कस्टम सर्वर"
 }

@@ -1765,5 +1765,11 @@
   "Book file is not available locally": "Файл книги недоступний локально",
   "Failed to send book": "Не вдалося надіслати книгу",
   "Send": "Надіслати",
-  "Highlight Current Sentence": "Виділяти поточне речення"
+  "Highlight Current Sentence": "Виділяти поточне речення",
+  "Could not reach server": "Не вдалося підключитися до сервера",
+  "Not a Readest server": "Не є сервером Readest",
+  "Server found! Press Save to apply — the app will reload.": "Сервер знайдено! Натисніть Зберегти для застосування — програма перезавантажиться.",
+  "This will remove the server configuration and reload the app. Press Save to confirm.": "Це видалить конфігурацію сервера та перезавантажить програму. Натисніть Зберегти для підтвердження.",
+  "Custom Server…": "Власний сервер…",
+  "Custom Server": "Власний сервер"
 }

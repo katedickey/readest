@@ -1666,5 +1666,11 @@
   "Book file is not available locally": "Fail buku tidak tersedia secara setempat",
   "Failed to send book": "Gagal menghantar buku",
   "Send": "Hantar",
-  "Highlight Current Sentence": "Serlahkan ayat semasa"
+  "Highlight Current Sentence": "Serlahkan ayat semasa",
+  "Could not reach server": "Tidak dapat mencapai pelayan",
+  "Not a Readest server": "Bukan pelayan Readest",
+  "Server found! Press Save to apply — the app will reload.": "Pelayan ditemui! Tekan Simpan untuk menerapkan — aplikasi akan dimuat semula.",
+  "This will remove the server configuration and reload the app. Press Save to confirm.": "Ini akan mengalih keluar konfigurasi pelayan dan memuat semula aplikasi. Tekan Simpan untuk mengesahkan.",
+  "Custom Server…": "Pelayan tersuai…",
+  "Custom Server": "Pelayan tersuai"
 }

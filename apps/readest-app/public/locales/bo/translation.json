@@ -1666,5 +1666,11 @@
   "Book file is not available locally": "དེབ་ཀྱི་ཡིག་ཆ་དེ་ས་གནས་སུ་མི་འདུག",
   "Failed to send book": "དེབ་སྐུར་གཏོང་མ་ཐུབ།",
   "Send": "སྐུར་གཏོང་།",
-  "Highlight Current Sentence": "ད་ལྟའི་ཚིག་གྲུབ་ལ་འོག་ཐིག་གཏོང་།"
+  "Highlight Current Sentence": "ད་ལྟའི་ཚིག་གྲུབ་ལ་འོག་ཐིག་གཏོང་།",
+  "Could not reach server": "སྤྱི་ཁུལ་སྒྲིག་ཆས་ལ་འཚམས་མི་ཐུབ།",
+  "Not a Readest server": "Readest ཀྱི་སྤྱི་ཁུལ་སྒྲིག་ཆས་མིན།",
+  "Server found! Press Save to apply — the app will reload.": "སྤྱི་ཁུལ་སྒྲིག་ཆས་རྙེད་སོང་། ཉར་ཚགས་གནང་ནས་སྒྲིག་འཇུག་བྱེད་རྒྱུ — མཉེན་ཆས་ཡང་བསྐྱར་འཇུག་རུང་གི་རེད།",
+  "This will remove the server configuration and reload the app. Press Save to confirm.": "འདིས་སྤྱི་ཁུལ་སྒྲིག་ཆས་ཀྱི་བཀོད་སྒྲིག་བཤིག་ནས་མཉེན་ཆས་ཡང་བསྐྱར་འཇུག་རུང་གི་རེད། གཏན་ཁེལ་གནང་བར་ཉར་ཚགས་གནང་རོགས།",
+  "Custom Server…": "ལོགས་སུ་སྒྲིག་པའི་སྤྱི་ཁུལ་སྒྲིག་ཆས…",
+  "Custom Server": "ལོགས་སུ་སྒྲིག་པའི་སྤྱི་ཁུལ་སྒྲིག་ཆས"
 }

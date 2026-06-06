@@ -1666,5 +1666,11 @@
   "Book file is not available locally": "ไม่มีไฟล์หนังสือในเครื่อง",
   "Failed to send book": "ส่งหนังสือไม่สำเร็จ",
   "Send": "ส่ง",
-  "Highlight Current Sentence": "ไฮไลต์ประโยคปัจจุบัน"
+  "Highlight Current Sentence": "ไฮไลต์ประโยคปัจจุบัน",
+  "Could not reach server": "ไม่สามารถเชื่อมต่อเซิร์ฟเวอร์ได้",
+  "Not a Readest server": "ไม่ใช่เซิร์ฟเวอร์ Readest",
+  "Server found! Press Save to apply — the app will reload.": "พบเซิร์ฟเวอร์แล้ว! กดบันทึกเพื่อใช้งาน — แอปจะโหลดใหม่",
+  "This will remove the server configuration and reload the app. Press Save to confirm.": "การดำเนินการนี้จะลบการตั้งค่าเซิร์ฟเวอร์และโหลดแอปใหม่ กดบันทึกเพื่อยืนยัน",
+  "Custom Server…": "เซิร์ฟเวอร์ที่กำหนดเอง…",
+  "Custom Server": "เซิร์ฟเวอร์ที่กำหนดเอง"
 }

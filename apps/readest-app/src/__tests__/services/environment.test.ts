@@ -257,6 +257,47 @@ describe('environment', () => {
     });
   });
 
+  // ── setBaseUrlOverride ─────────────────────────────────────────
+  describe('setBaseUrlOverride', () => {
+    test('overrides getBaseUrl when set', async () => {
+      delete env['NEXT_PUBLIC_API_BASE_URL'];
+      const { getBaseUrl, setBaseUrlOverride } = await import('@/services/environment');
+      setBaseUrlOverride('https://self-hosted.example.com');
+      expect(getBaseUrl()).toBe('https://self-hosted.example.com');
+    });
+
+    test('clears the override when called with empty string', async () => {
+      delete env['NEXT_PUBLIC_API_BASE_URL'];
+      const { getBaseUrl, setBaseUrlOverride } = await import('@/services/environment');
+      setBaseUrlOverride('https://self-hosted.example.com');
+      setBaseUrlOverride('');
+      expect(getBaseUrl()).toBe('https://web.readest.com');
+    });
+
+    test('clears the override when called with undefined', async () => {
+      delete env['NEXT_PUBLIC_API_BASE_URL'];
+      const { getBaseUrl, setBaseUrlOverride } = await import('@/services/environment');
+      setBaseUrlOverride('https://self-hosted.example.com');
+      setBaseUrlOverride(undefined);
+      expect(getBaseUrl()).toBe('https://web.readest.com');
+    });
+
+    test('override takes precedence over runtime config', async () => {
+      window.__READEST_RUNTIME_CONFIG = { apiBaseUrl: 'https://runtime.example.com' };
+      const { getBaseUrl, setBaseUrlOverride } = await import('@/services/environment');
+      setBaseUrlOverride('https://self-hosted.example.com');
+      expect(getBaseUrl()).toBe('https://self-hosted.example.com');
+    });
+
+    test('propagates through getAPIBaseUrl in production mode', async () => {
+      env['NODE_ENV'] = 'production';
+      env['NEXT_PUBLIC_APP_PLATFORM'] = 'tauri';
+      const { getAPIBaseUrl, setBaseUrlOverride } = await import('@/services/environment');
+      setBaseUrlOverride('https://self-hosted.example.com');
+      expect(getAPIBaseUrl()).toBe('https://self-hosted.example.com/api');
+    });
+  });
+
   // ── environmentConfig default export ───────────────────────────
   describe('environmentConfig', () => {
     test('exports an object with getAppService function', async () => {

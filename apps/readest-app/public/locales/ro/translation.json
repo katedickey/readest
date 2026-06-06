@@ -1732,5 +1732,11 @@
   "Book file is not available locally": "Fișierul cărții nu este disponibil local",
   "Failed to send book": "Trimiterea cărții a eșuat",
   "Send": "Trimite",
-  "Highlight Current Sentence": "Evidențiază propoziția curentă"
+  "Highlight Current Sentence": "Evidențiază propoziția curentă",
+  "Could not reach server": "Nu s-a putut ajunge la server",
+  "Not a Readest server": "Nu este un server Readest",
+  "Server found! Press Save to apply — the app will reload.": "Server găsit! Apăsați Salvare pentru a aplica — aplicația va fi reîncărcată.",
+  "This will remove the server configuration and reload the app. Press Save to confirm.": "Aceasta va elimina configurația serverului și va reîncărca aplicația. Apăsați Salvare pentru confirmare.",
+  "Custom Server…": "Server personalizat…",
+  "Custom Server": "Server personalizat"
 }

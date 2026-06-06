@@ -1699,5 +1699,11 @@
   "Book file is not available locally": "Το αρχείο του βιβλίου δεν είναι διαθέσιμο τοπικά",
   "Failed to send book": "Αποτυχία αποστολής βιβλίου",
   "Send": "Αποστολή",
-  "Highlight Current Sentence": "Επισήμανση τρέχουσας πρότασης"
+  "Highlight Current Sentence": "Επισήμανση τρέχουσας πρότασης",
+  "Could not reach server": "Αδύνατη η σύνδεση με τον διακομιστή",
+  "Not a Readest server": "Δεν είναι διακομιστής Readest",
+  "Server found! Press Save to apply — the app will reload.": "Ο διακομιστής βρέθηκε! Πατήστε Αποθήκευση για εφαρμογή — η εφαρμογή θα επαναφορτωθεί.",
+  "This will remove the server configuration and reload the app. Press Save to confirm.": "Αυτό θα αφαιρέσει τη διαμόρφωση του διακομιστή και θα επαναφορτώσει την εφαρμογή. Πατήστε Αποθήκευση για επιβεβαίωση.",
+  "Custom Server…": "Προσαρμοσμένος διακομιστής…",
+  "Custom Server": "Προσαρμοσμένος διακομιστής"
 }

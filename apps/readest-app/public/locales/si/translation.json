@@ -1699,5 +1699,11 @@
   "Book file is not available locally": "පොත් ගොනුව දේශීයව ලබා ගත නොහැක",
   "Failed to send book": "පොත යැවීමට අසමත් විය",
   "Send": "යවන්න",
-  "Highlight Current Sentence": "වර්තමාන වාක්‍යය ඉස්මතු කරන්න"
+  "Highlight Current Sentence": "වර්තමාන වාක්‍යය ඉස්මතු කරන්න",
+  "Could not reach server": "සේවාදායකයට ළඟා විය නොහැකි විය",
+  "Not a Readest server": "Readest සේවාදායකයක් නොවේ",
+  "Server found! Press Save to apply — the app will reload.": "සේවාදායකය හමු විය! යෙදීමට සුරකින්න ඔබන්න — යෙදුම නැවත පූරණය වේ.",
+  "This will remove the server configuration and reload the app. Press Save to confirm.": "මෙය සේවාදායක වින්‍යාසය ඉවත් කර යෙදුම නැවත පූරණය කරනු ඇත. සහතික කිරීමට සුරකින්න ඔබන්න.",
+  "Custom Server…": "අභිරුචි සේවාදායකය…",
+  "Custom Server": "අභිරුචි සේවාදායකය"
 }
