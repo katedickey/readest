@@ -43,14 +43,14 @@
           nodejs_22
           clang
           pkg-config
-          (pkgs.fenix.complete.withComponents [
+          (pkgs.fenix.stable.withComponents [
             "cargo"
             "clippy"
             "rust-src"
             "rustc"
             "rustfmt"
           ])
-          pkgs.rust-analyzer-nightly
+          pkgs.fenix.stable.rust-analyzer
           xdg-utils
         ];
 

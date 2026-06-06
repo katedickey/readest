@@ -48,6 +48,9 @@ fastlane/metadata/android/en-US/changelogs
 # nix
 result*
 
+# direnv
+.direnv/
+
 .playwright-mcp/
 .gstack
 
