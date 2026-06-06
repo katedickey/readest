@@ -79,7 +79,10 @@
         getDev = pkg: if pkg ? dev then pkg.dev else pkg;
         getLib = pkg: if pkg ? lib then pkg.lib else pkg;
 
-        pkgConfigPath = lib.makeSearchPath "lib/pkgconfig" (map getDev systemDeps);
+        pkgConfigPath = lib.concatStringsSep ":" [
+          (lib.makeSearchPath "lib/pkgconfig" (map getDev systemDeps))
+          (lib.makeSearchPath "share/pkgconfig" (map getDev systemDeps))
+        ];
         libPath = lib.makeLibraryPath (map getLib systemDeps);
 
         mkCommonShell =
