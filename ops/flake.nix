@@ -38,18 +38,32 @@
         };
         # android-studio is not available in aarch64-darwin
         androidConditionalPackages = if pkgs.system != "aarch64-darwin" then [ pkgs.android-studio ] else [ ];
-        commonPackages = with pkgs; [
+        baseToolchain = pkgs.fenix.stable.withComponents [
+          "cargo"
+          "clippy"
+          "rust-src"
+          "rustc"
+          "rustfmt"
+        ];
+
+        androidTargets = [
+          "aarch64-linux-android"
+          "armv7-linux-androideabi"
+          "i686-linux-android"
+          "x86_64-linux-android"
+        ];
+
+        androidToolchain = pkgs.fenix.combine (
+          [ baseToolchain ]
+          ++ map (target: pkgs.fenix.targets.${target}.stable.rust-std) androidTargets
+        );
+
+        mkCommonPackages = toolchain: with pkgs; [
           pnpm
           nodejs_24
           clang
           pkg-config
-          (pkgs.fenix.stable.withComponents [
-            "cargo"
-            "clippy"
-            "rust-src"
-            "rustc"
-            "rustfmt"
-          ])
+          toolchain
           pkgs.fenix.stable.rust-analyzer
           xdg-utils
         ];
@@ -87,6 +101,7 @@
 
         mkCommonShell =
           { name
+          , rustToolchain ? baseToolchain
           , extraPackages ? [ ]
           , extraEnv ? [
               {
@@ -125,7 +140,7 @@
           }:
           pkgs.devshell.mkShell {
             inherit name;
-            packages = commonPackages ++ extraPackages;
+            packages = (mkCommonPackages rustToolchain) ++ extraPackages;
             env = extraEnv;
           };
       in
@@ -133,12 +148,14 @@
         packages = {
           android-sdk = android.sdk.${system} (sdkPkgs: with sdkPkgs; [
             # Useful packages for building and testing.
-            build-tools-34-0-0
+            build-tools-35-0-0
             cmdline-tools-latest
             emulator
             platform-tools
             platforms-android-34
-            ndk-26-1-10909125
+            platforms-android-35
+            platforms-android-36
+            ndk-28-2-13676358
           ]
           ++ lib.optionals (system == "aarch64-darwin") [
             system-images-android-34-google-apis-arm64-v8a
@@ -165,6 +182,7 @@
 
           android = mkCommonShell {
             name = "readest-android";
+            rustToolchain = androidToolchain;
             extraPackages = [
               pkgs.android-sdk
               pkgs.gradle
@@ -181,7 +199,7 @@
               }
               {
                 name = "NDK_HOME";
-                value = "${pkgs.android-sdk}/share/android-sdk/ndk/26.1.10909125";
+                value = "${pkgs.android-sdk}/share/android-sdk/ndk/28.2.13676358";
               }
               {
                 name = "JAVA_HOME";
