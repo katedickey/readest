@@ -1674,5 +1674,6 @@
   "Server found. Press Save to confirm (you will be signed out).": "Đã tìm thấy máy chủ. Nhấn Lưu để xác nhận (bạn sẽ bị đăng xuất).",
   "Server found. Press Save to confirm.": "Đã tìm thấy máy chủ. Nhấn Lưu để xác nhận.",
   "This will remove the custom server. Press Save to confirm (you will be signed out).": "Thao tác này sẽ xóa máy chủ tùy chỉnh. Nhấn Lưu để xác nhận (bạn sẽ bị đăng xuất).",
-  "This will remove the custom server. Press Save to confirm.": "Thao tác này sẽ xóa máy chủ tùy chỉnh. Nhấn Lưu để xác nhận."
+  "This will remove the custom server. Press Save to confirm.": "Thao tác này sẽ xóa máy chủ tùy chỉnh. Nhấn Lưu để xác nhận.",
+  "Could not save": "Không thể lưu"
 }

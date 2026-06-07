@@ -1740,5 +1740,6 @@
   "Server found. Press Save to confirm (you will be signed out).": "Serveur trouvé. Appuyez sur Enregistrer pour confirmer (vous serez déconnecté).",
   "Server found. Press Save to confirm.": "Serveur trouvé. Appuyez sur Enregistrer pour confirmer.",
   "This will remove the custom server. Press Save to confirm (you will be signed out).": "Cela supprimera le serveur personnalisé. Appuyez sur Enregistrer pour confirmer (vous serez déconnecté).",
-  "This will remove the custom server. Press Save to confirm.": "Cela supprimera le serveur personnalisé. Appuyez sur Enregistrer pour confirmer."
+  "This will remove the custom server. Press Save to confirm.": "Cela supprimera le serveur personnalisé. Appuyez sur Enregistrer pour confirmer.",
+  "Could not save": "Échec de l'enregistrement"
 }

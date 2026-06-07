@@ -1707,5 +1707,6 @@
   "Server found. Press Save to confirm (you will be signed out).": "සර්වරය හමුවී ඇත. තහවුරු කිරීමට සුරකින්න ඔබන්න (ඔබව පිටවී යනු ඇත).",
   "Server found. Press Save to confirm.": "සර්වරය හමුවී ඇත. තහවුරු කිරීමට සුරකින්න ඔබන්න.",
   "This will remove the custom server. Press Save to confirm (you will be signed out).": "මෙය අභිරුචි සර්වරය ඉවත් කරයි. තහවුරු කිරීමට සුරකින්න ඔබන්න (ඔබව පිටවී යනු ඇත).",
-  "This will remove the custom server. Press Save to confirm.": "මෙය අභිරුචි සර්වරය ඉවත් කරයි. තහවුරු කිරීමට සුරකින්න ඔබන්න."
+  "This will remove the custom server. Press Save to confirm.": "මෙය අභිරුචි සර්වරය ඉවත් කරයි. තහවුරු කිරීමට සුරකින්න ඔබන්න.",
+  "Could not save": "සුරැකිය නොහැකි විය"
 }

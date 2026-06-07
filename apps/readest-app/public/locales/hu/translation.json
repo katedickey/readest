@@ -1707,5 +1707,6 @@
   "Server found. Press Save to confirm (you will be signed out).": "A kiszolgáló megtalálva. A megerősítéshez kattints a Mentés gombra (ki leszel jelentkeztetve).",
   "Server found. Press Save to confirm.": "A kiszolgáló megtalálva. A megerősítéshez kattints a Mentés gombra.",
   "This will remove the custom server. Press Save to confirm (you will be signed out).": "Ez eltávolítja az egyéni kiszolgálót. A megerősítéshez kattints a Mentés gombra (ki leszel jelentkeztetve).",
-  "This will remove the custom server. Press Save to confirm.": "Ez eltávolítja az egyéni kiszolgálót. A megerősítéshez kattints a Mentés gombra."
+  "This will remove the custom server. Press Save to confirm.": "Ez eltávolítja az egyéni kiszolgálót. A megerősítéshez kattints a Mentés gombra.",
+  "Could not save": "Mentés sikertelen"
 }

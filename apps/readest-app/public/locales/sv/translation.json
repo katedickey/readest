@@ -1707,5 +1707,6 @@
   "Server found. Press Save to confirm (you will be signed out).": "Servern hittades. Tryck på Spara för att bekräfta (du loggas ut).",
   "Server found. Press Save to confirm.": "Servern hittades. Tryck på Spara för att bekräfta.",
   "This will remove the custom server. Press Save to confirm (you will be signed out).": "Detta tar bort den anpassade servern. Tryck på Spara för att bekräfta (du loggas ut).",
-  "This will remove the custom server. Press Save to confirm.": "Detta tar bort den anpassade servern. Tryck på Spara för att bekräfta."
+  "This will remove the custom server. Press Save to confirm.": "Detta tar bort den anpassade servern. Tryck på Spara för att bekräfta.",
+  "Could not save": "Det gick inte att spara"
 }

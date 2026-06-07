@@ -1773,5 +1773,6 @@
   "Server found. Press Save to confirm (you will be signed out).": "Strežnik najden. Pritisni Shrani za potrditev (boš odjavljen).",
   "Server found. Press Save to confirm.": "Strežnik najden. Pritisni Shrani za potrditev.",
   "This will remove the custom server. Press Save to confirm (you will be signed out).": "S tem boste odstranili strežnik po meri. Pritisni Shrani za potrditev (boš odjavljen).",
-  "This will remove the custom server. Press Save to confirm.": "S tem boste odstranili strežnik po meri. Pritisni Shrani za potrditev."
+  "This will remove the custom server. Press Save to confirm.": "S tem boste odstranili strežnik po meri. Pritisni Shrani za potrditev.",
+  "Could not save": "Shranjevanje ni uspelo"
 }

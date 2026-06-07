@@ -1707,5 +1707,6 @@
   "Server found. Press Save to confirm (you will be signed out).": "Βρέθηκε ο διακομιστής. Πατήστε Αποθήκευση για επιβεβαίωση (θα αποσυνδεθείτε).",
   "Server found. Press Save to confirm.": "Βρέθηκε ο διακομιστής. Πατήστε Αποθήκευση για επιβεβαίωση.",
   "This will remove the custom server. Press Save to confirm (you will be signed out).": "Αυτό θα αφαιρέσει τον προσαρμοσμένο διακομιστή. Πατήστε Αποθήκευση για επιβεβαίωση (θα αποσυνδεθείτε).",
-  "This will remove the custom server. Press Save to confirm.": "Αυτό θα αφαιρέσει τον προσαρμοσμένο διακομιστή. Πατήστε Αποθήκευση για επιβεβαίωση."
+  "This will remove the custom server. Press Save to confirm.": "Αυτό θα αφαιρέσει τον προσαρμοσμένο διακομιστή. Πατήστε Αποθήκευση για επιβεβαίωση.",
+  "Could not save": "Αδυναμία αποθήκευσης"
 }

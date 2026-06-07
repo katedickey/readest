@@ -1674,5 +1674,6 @@
   "Server found. Press Save to confirm (you will be signed out).": "ཞབས་ཞུ་བ་རྙེད་སོང་། གཏན་འཁེལ་བྱེད་པར་ཉར་ཚགས་གནོན། (ཁྱེད་ནས་ཐོན་ངེས་རེད།)",
   "Server found. Press Save to confirm.": "ཞབས་ཞུ་བ་རྙེད་སོང་། གཏན་འཁེལ་བྱེད་པར་ཉར་ཚགས་གནོན།",
   "This will remove the custom server. Press Save to confirm (you will be signed out).": "འདིས་སྲོལ་སྒྲིག་ཞབས་ཞུ་བ་སུབ་ངེས། གཏན་འཁེལ་བྱེད་པར་ཉར་ཚགས་གནོན། (ཁྱེད་ནས་ཐོན་ངེས་རེད།)",
-  "This will remove the custom server. Press Save to confirm.": "འདིས་སྲོལ་སྒྲིག་ཞབས་ཞུ་བ་སུབ་ངེས། གཏན་འཁེལ་བྱེད་པར་ཉར་ཚགས་གནོན།"
+  "This will remove the custom server. Press Save to confirm.": "འདིས་སྲོལ་སྒྲིག་ཞབས་ཞུ་བ་སུབ་ངེས། གཏན་འཁེལ་བྱེད་པར་ཉར་ཚགས་གནོན།",
+  "Could not save": "ཉར་ཚགས་མ་ཐུབ།"
 }

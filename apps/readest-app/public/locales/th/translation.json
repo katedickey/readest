@@ -1674,5 +1674,6 @@
   "Server found. Press Save to confirm (you will be signed out).": "พบเซิร์ฟเวอร์แล้ว กดบันทึกเพื่อยืนยัน (คุณจะถูกออกจากระบบ)",
   "Server found. Press Save to confirm.": "พบเซิร์ฟเวอร์แล้ว กดบันทึกเพื่อยืนยัน",
   "This will remove the custom server. Press Save to confirm (you will be signed out).": "การดำเนินการนี้จะลบเซิร์ฟเวอร์ที่กำหนดเอง กดบันทึกเพื่อยืนยัน (คุณจะถูกออกจากระบบ)",
-  "This will remove the custom server. Press Save to confirm.": "การดำเนินการนี้จะลบเซิร์ฟเวอร์ที่กำหนดเอง กดบันทึกเพื่อยืนยัน"
+  "This will remove the custom server. Press Save to confirm.": "การดำเนินการนี้จะลบเซิร์ฟเวอร์ที่กำหนดเอง กดบันทึกเพื่อยืนยัน",
+  "Could not save": "ไม่สามารถบันทึกได้"
 }

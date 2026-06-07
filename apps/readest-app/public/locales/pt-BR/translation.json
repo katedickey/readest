@@ -1740,5 +1740,6 @@
   "Server found. Press Save to confirm (you will be signed out).": "Servidor encontrado. Pressione Salvar para confirmar (você será desconectado).",
   "Server found. Press Save to confirm.": "Servidor encontrado. Pressione Salvar para confirmar.",
   "This will remove the custom server. Press Save to confirm (you will be signed out).": "Isto removerá o servidor personalizado. Pressione Salvar para confirmar (você será desconectado).",
-  "This will remove the custom server. Press Save to confirm.": "Isto removerá o servidor personalizado. Pressione Salvar para confirmar."
+  "This will remove the custom server. Press Save to confirm.": "Isto removerá o servidor personalizado. Pressione Salvar para confirmar.",
+  "Could not save": "Não foi possível salvar"
 }

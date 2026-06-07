@@ -1773,5 +1773,6 @@
   "Server found. Press Save to confirm (you will be signed out).": "Znaleziono serwer. Naciśnij Zapisz, aby potwierdzić (zostaniesz wylogowany).",
   "Server found. Press Save to confirm.": "Znaleziono serwer. Naciśnij Zapisz, aby potwierdzić.",
   "This will remove the custom server. Press Save to confirm (you will be signed out).": "Spowoduje to usunięcie niestandardowego serwera. Naciśnij Zapisz, aby potwierdzić (zostaniesz wylogowany).",
-  "This will remove the custom server. Press Save to confirm.": "Spowoduje to usunięcie niestandardowego serwera. Naciśnij Zapisz, aby potwierdzić."
+  "This will remove the custom server. Press Save to confirm.": "Spowoduje to usunięcie niestandardowego serwera. Naciśnij Zapisz, aby potwierdzić.",
+  "Could not save": "Nie udało się zapisać"
 }

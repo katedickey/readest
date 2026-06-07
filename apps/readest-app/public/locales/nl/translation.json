@@ -1707,5 +1707,6 @@
   "Server found. Press Save to confirm (you will be signed out).": "Server gevonden. Druk op Opslaan om te bevestigen (je wordt afgemeld).",
   "Server found. Press Save to confirm.": "Server gevonden. Druk op Opslaan om te bevestigen.",
   "This will remove the custom server. Press Save to confirm (you will be signed out).": "Hiermee wordt de aangepaste server verwijderd. Druk op Opslaan om te bevestigen (je wordt afgemeld).",
-  "This will remove the custom server. Press Save to confirm.": "Hiermee wordt de aangepaste server verwijderd. Druk op Opslaan om te bevestigen."
+  "This will remove the custom server. Press Save to confirm.": "Hiermee wordt de aangepaste server verwijderd. Druk op Opslaan om te bevestigen.",
+  "Could not save": "Opslaan mislukt"
 }

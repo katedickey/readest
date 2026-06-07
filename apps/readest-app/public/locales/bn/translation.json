@@ -1707,5 +1707,6 @@
   "Server found. Press Save to confirm (you will be signed out).": "সার্ভার পাওয়া গেছে। নিশ্চিত করতে সংরক্ষণ চাপুন (আপনাকে সাইন আউট করা হবে)।",
   "Server found. Press Save to confirm.": "সার্ভার পাওয়া গেছে। নিশ্চিত করতে সংরক্ষণ চাপুন।",
   "This will remove the custom server. Press Save to confirm (you will be signed out).": "এটি কাস্টম সার্ভার সরিয়ে ফেলবে। নিশ্চিত করতে সংরক্ষণ চাপুন (আপনাকে সাইন আউট করা হবে)।",
-  "This will remove the custom server. Press Save to confirm.": "এটি কাস্টম সার্ভার সরিয়ে ফেলবে। নিশ্চিত করতে সংরক্ষণ চাপুন।"
+  "This will remove the custom server. Press Save to confirm.": "এটি কাস্টম সার্ভার সরিয়ে ফেলবে। নিশ্চিত করতে সংরক্ষণ চাপুন।",
+  "Could not save": "সংরক্ষণ করা গেল না"
 }

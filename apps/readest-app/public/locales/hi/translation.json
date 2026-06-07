@@ -1707,5 +1707,6 @@
   "Server found. Press Save to confirm (you will be signed out).": "सर्वर मिल गया। पुष्टि करने के लिए सहेजें दबाएँ (आप साइन आउट हो जाएँगे)।",
   "Server found. Press Save to confirm.": "सर्वर मिल गया। पुष्टि करने के लिए सहेजें दबाएँ।",
   "This will remove the custom server. Press Save to confirm (you will be signed out).": "इससे कस्टम सर्वर हट जाएगा। पुष्टि करने के लिए सहेजें दबाएँ (आप साइन आउट हो जाएँगे)।",
-  "This will remove the custom server. Press Save to confirm.": "इससे कस्टम सर्वर हट जाएगा। पुष्टि करने के लिए सहेजें दबाएँ।"
+  "This will remove the custom server. Press Save to confirm.": "इससे कस्टम सर्वर हट जाएगा। पुष्टि करने के लिए सहेजें दबाएँ।",
+  "Could not save": "सहेजा नहीं जा सका"
 }

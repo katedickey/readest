@@ -1773,5 +1773,6 @@
   "Server found. Press Save to confirm (you will be signed out).": "Сервер знайдено. Натисніть «Зберегти» для підтвердження (вас буде вийдено з облікового запису).",
   "Server found. Press Save to confirm.": "Сервер знайдено. Натисніть «Зберегти» для підтвердження.",
   "This will remove the custom server. Press Save to confirm (you will be signed out).": "Це видалить власний сервер. Натисніть «Зберегти» для підтвердження (вас буде вийдено з облікового запису).",
-  "This will remove the custom server. Press Save to confirm.": "Це видалить власний сервер. Натисніть «Зберегти» для підтвердження."
+  "This will remove the custom server. Press Save to confirm.": "Це видалить власний сервер. Натисніть «Зберегти» для підтвердження.",
+  "Could not save": "Не вдалося зберегти"
 }

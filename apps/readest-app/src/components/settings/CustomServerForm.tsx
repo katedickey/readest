@@ -43,12 +43,13 @@ const CustomServerForm = ({ onClose }: CustomServerFormProps) => {
   const savedUrl = settings.customServer?.serverUrl ?? '';
   const [serverUrl, setServerUrl] = useState(savedUrl);
   const [isConnecting, setIsConnecting] = useState(false);
+  const [isSaving, setIsSaving] = useState(false);
   const [discovered, setDiscovered] = useState<DiscoveredConfig | null>(null);
   const [confirmClear, setConfirmClear] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
 
   const showClearButton = !!savedUrl && serverUrl === savedUrl && !confirmClear;
-  const saveEnabled = !!discovered || confirmClear;
+  const saveEnabled = (!!discovered || confirmClear) && !isSaving;
 
   const handleConnect = async () => {
     setIsConnecting(true);
@@ -75,45 +76,44 @@ const CustomServerForm = ({ onClose }: CustomServerFormProps) => {
   };
 
   const handleSave = async () => {
-    if (confirmClear) {
-      await saveSysSettings(envConfig, 'customServer', undefined);
-      try {
-        localStorage.removeItem(CUSTOM_SERVER_LS_KEY);
-      } catch {
-        // ignore
+    setIsSaving(true);
+    setErrorMessage('');
+    try {
+      if (confirmClear) {
+        await saveSysSettings(envConfig, 'customServer', undefined);
+        try {
+          localStorage.removeItem(CUSTOM_SERVER_LS_KEY);
+        } catch {}
+        await wipeAuthCredentials();
+        window.location.reload();
+        return;
       }
-      // Any existing session is tied to the custom server's Supabase
-      // project and won't validate against the default one. Wipe first so
-      // the post-reload AuthContext doesn't briefly surface a stale user.
+      if (!discovered) return;
+      const normalized = normalizeServerUrl(serverUrl);
+      const next: CustomServerSettings = { serverUrl: normalized, ...discovered };
+      await saveSysSettings(envConfig, 'customServer', next);
+      try {
+        localStorage.setItem(
+          CUSTOM_SERVER_LS_KEY,
+          JSON.stringify({
+            supabaseUrl: discovered.supabaseUrl,
+            supabaseAnonKey: discovered.supabaseAnonKey,
+            s3Endpoint: discovered.s3Endpoint,
+            s3BucketName: discovered.s3BucketName,
+            s3Region: discovered.s3Region,
+            objectStorageType: discovered.objectStorageType,
+            apiBaseUrl: discovered.apiBaseUrl,
+          }),
+        );
+      } catch {}
       await wipeAuthCredentials();
       window.location.reload();
-      return;
+    } catch (err) {
+      const message = err instanceof Error && err.message ? err.message : _('Could not save');
+      setErrorMessage(message);
+    } finally {
+      setIsSaving(false);
     }
-    if (!discovered) return;
-    const normalized = normalizeServerUrl(serverUrl);
-    const next: CustomServerSettings = { serverUrl: normalized, ...discovered };
-    await saveSysSettings(envConfig, 'customServer', next);
-    try {
-      localStorage.setItem(
-        CUSTOM_SERVER_LS_KEY,
-        JSON.stringify({
-          supabaseUrl: discovered.supabaseUrl,
-          supabaseAnonKey: discovered.supabaseAnonKey,
-          s3Endpoint: discovered.s3Endpoint,
-          s3BucketName: discovered.s3BucketName,
-          s3Region: discovered.s3Region,
-          objectStorageType: discovered.objectStorageType,
-          apiBaseUrl: discovered.apiBaseUrl,
-        }),
-      );
-    } catch {
-      // localStorage may be unavailable; settings.customServer is the source of truth.
-    }
-    // The new server is a different Supabase project — the old token is
-    // worthless against it. Wipe before the reload so the next session
-    // starts clean.
-    await wipeAuthCredentials();
-    window.location.reload();
   };
 
   return (
@@ -127,8 +127,9 @@ const CustomServerForm = ({ onClose }: CustomServerFormProps) => {
             id='custom-server-url'
             type='text'
             placeholder='https://readest.example.com'
-            className='input input-bordered eink-bordered h-11 flex-1 text-sm focus:outline-none'
+            className='input input-bordered eink-bordered h-11 flex-1 text-sm focus:outline-none disabled:opacity-60'
             spellCheck='false'
+            disabled={isSaving}
             value={serverUrl}
             onChange={(e) => {
               setServerUrl(e.target.value);
@@ -140,6 +141,7 @@ const CustomServerForm = ({ onClose }: CustomServerFormProps) => {
           {showClearButton ? (
             <button
               type='button'
+              disabled={isSaving}
               onClick={() => {
                 setServerUrl('');
                 setConfirmClear(true);
@@ -151,6 +153,7 @@ const CustomServerForm = ({ onClose }: CustomServerFormProps) => {
                 'text-error hover:bg-error/10',
                 'transition-colors duration-150',
                 'focus-visible:ring-error/40 focus-visible:outline-none focus-visible:ring-2',
+                isSaving && 'opacity-60',
               )}
             >
               {_('Clear')}
@@ -159,14 +162,14 @@ const CustomServerForm = ({ onClose }: CustomServerFormProps) => {
             <button
               type='button'
               onClick={handleConnect}
-              disabled={isConnecting || !serverUrl.trim()}
+              disabled={isConnecting || isSaving || !serverUrl.trim()}
               className={clsx(
                 'eink-bordered',
                 'h-11 rounded-lg px-4 text-sm font-medium',
                 'hover:bg-base-200',
                 'transition-colors duration-150',
                 'focus-visible:ring-primary/40 focus-visible:outline-none focus-visible:ring-2',
-                (isConnecting || !serverUrl.trim()) && 'opacity-60',
+                (isConnecting || isSaving || !serverUrl.trim()) && 'opacity-60',
               )}
             >
               {isConnecting ? (
@@ -202,12 +205,14 @@ const CustomServerForm = ({ onClose }: CustomServerFormProps) => {
         <button
           type='button'
           onClick={onClose}
+          disabled={isSaving}
           className={clsx(
             'eink-bordered',
             'h-10 rounded-lg px-4 text-sm font-medium',
             'hover:bg-base-200',
             'transition-colors duration-150',
             'focus-visible:ring-primary/40 focus-visible:outline-none focus-visible:ring-2',
+            isSaving && 'opacity-60',
           )}
         >
           {_('Close')}
@@ -223,7 +228,7 @@ const CustomServerForm = ({ onClose }: CustomServerFormProps) => {
             !saveEnabled && 'opacity-60',
           )}
         >
-          {_('Save')}
+          {isSaving ? <span className='loading loading-spinner loading-sm' /> : _('Save')}
         </button>
       </div>
     </div>

@@ -1740,5 +1740,6 @@
   "Server found. Press Save to confirm (you will be signed out).": "Server găsit. Apasă Salvează pentru a confirma (vei fi deconectat).",
   "Server found. Press Save to confirm.": "Server găsit. Apasă Salvează pentru a confirma.",
   "This will remove the custom server. Press Save to confirm (you will be signed out).": "Această acțiune va elimina serverul personalizat. Apasă Salvează pentru a confirma (vei fi deconectat).",
-  "This will remove the custom server. Press Save to confirm.": "Această acțiune va elimina serverul personalizat. Apasă Salvează pentru a confirma."
+  "This will remove the custom server. Press Save to confirm.": "Această acțiune va elimina serverul personalizat. Apasă Salvează pentru a confirma.",
+  "Could not save": "Nu s-a putut salva"
 }

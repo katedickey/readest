@@ -1674,5 +1674,6 @@
   "Server found. Press Save to confirm (you will be signed out).": "已找到伺服器。按保存確認(您將被登出)。",
   "Server found. Press Save to confirm.": "已找到伺服器。按保存確認。",
   "This will remove the custom server. Press Save to confirm (you will be signed out).": "這將移除自訂伺服器。按保存確認(您將被登出)。",
-  "This will remove the custom server. Press Save to confirm.": "這將移除自訂伺服器。按保存確認。"
+  "This will remove the custom server. Press Save to confirm.": "這將移除自訂伺服器。按保存確認。",
+  "Could not save": "無法保存"
 }

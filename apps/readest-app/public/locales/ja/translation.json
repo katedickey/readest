@@ -1674,5 +1674,6 @@
   "Server found. Press Save to confirm (you will be signed out).": "サーバーが見つかりました。確認するには保存を押してください(サインアウトされます)。",
   "Server found. Press Save to confirm.": "サーバーが見つかりました。確認するには保存を押してください。",
   "This will remove the custom server. Press Save to confirm (you will be signed out).": "これによりカスタムサーバーが削除されます。確認するには保存を押してください(サインアウトされます)。",
-  "This will remove the custom server. Press Save to confirm.": "これによりカスタムサーバーが削除されます。確認するには保存を押してください。"
+  "This will remove the custom server. Press Save to confirm.": "これによりカスタムサーバーが削除されます。確認するには保存を押してください。",
+  "Could not save": "保存できませんでした"
 }

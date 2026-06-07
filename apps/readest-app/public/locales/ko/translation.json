@@ -1674,5 +1674,6 @@
   "Server found. Press Save to confirm (you will be signed out).": "서버를 찾았습니다. 확인하려면 저장을 누르세요(로그아웃됩니다).",
   "Server found. Press Save to confirm.": "서버를 찾았습니다. 확인하려면 저장을 누르세요.",
   "This will remove the custom server. Press Save to confirm (you will be signed out).": "사용자 지정 서버가 제거됩니다. 확인하려면 저장을 누르세요(로그아웃됩니다).",
-  "This will remove the custom server. Press Save to confirm.": "사용자 지정 서버가 제거됩니다. 확인하려면 저장을 누르세요."
+  "This will remove the custom server. Press Save to confirm.": "사용자 지정 서버가 제거됩니다. 확인하려면 저장을 누르세요.",
+  "Could not save": "저장하지 못했습니다"
 }

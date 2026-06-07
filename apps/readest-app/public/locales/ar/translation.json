@@ -1839,5 +1839,6 @@
   "Server found. Press Save to confirm (you will be signed out).": "تم العثور على الخادم. اضغط على حفظ للتأكيد (سيتم تسجيل خروجك).",
   "Server found. Press Save to confirm.": "تم العثور على الخادم. اضغط على حفظ للتأكيد.",
   "This will remove the custom server. Press Save to confirm (you will be signed out).": "سيؤدي هذا إلى إزالة الخادم المخصص. اضغط على حفظ للتأكيد (سيتم تسجيل خروجك).",
-  "This will remove the custom server. Press Save to confirm.": "سيؤدي هذا إلى إزالة الخادم المخصص. اضغط على حفظ للتأكيد."
+  "This will remove the custom server. Press Save to confirm.": "سيؤدي هذا إلى إزالة الخادم المخصص. اضغط على حفظ للتأكيد.",
+  "Could not save": "تعذر الحفظ"
 }

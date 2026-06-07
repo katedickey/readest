@@ -1707,5 +1707,6 @@
   "Server found. Press Save to confirm (you will be signed out).": "சர்வர் கண்டறியப்பட்டது. உறுதிசெய்ய சேமிக்கவும் என்பதை அழுத்தவும் (நீங்கள் வெளியேற்றப்படுவீர்கள்).",
   "Server found. Press Save to confirm.": "சர்வர் கண்டறியப்பட்டது. உறுதிசெய்ய சேமிக்கவும் என்பதை அழுத்தவும்.",
   "This will remove the custom server. Press Save to confirm (you will be signed out).": "இது தனிப்பயன் சர்வரை அகற்றும். உறுதிசெய்ய சேமிக்கவும் என்பதை அழுத்தவும் (நீங்கள் வெளியேற்றப்படுவீர்கள்).",
-  "This will remove the custom server. Press Save to confirm.": "இது தனிப்பயன் சர்வரை அகற்றும். உறுதிசெய்ய சேமிக்கவும் என்பதை அழுத்தவும்."
+  "This will remove the custom server. Press Save to confirm.": "இது தனிப்பயன் சர்வரை அகற்றும். உறுதிசெய்ய சேமிக்கவும் என்பதை அழுத்தவும்.",
+  "Could not save": "சேமிக்க முடியவில்லை"
 }

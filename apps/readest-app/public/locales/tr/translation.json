@@ -1707,5 +1707,6 @@
   "Server found. Press Save to confirm (you will be signed out).": "Sunucu bulundu. Onaylamak için Kaydet'e basın (oturumunuz kapatılacak).",
   "Server found. Press Save to confirm.": "Sunucu bulundu. Onaylamak için Kaydet'e basın.",
   "This will remove the custom server. Press Save to confirm (you will be signed out).": "Bu, özel sunucuyu kaldıracak. Onaylamak için Kaydet'e basın (oturumunuz kapatılacak).",
-  "This will remove the custom server. Press Save to confirm.": "Bu, özel sunucuyu kaldıracak. Onaylamak için Kaydet'e basın."
+  "This will remove the custom server. Press Save to confirm.": "Bu, özel sunucuyu kaldıracak. Onaylamak için Kaydet'e basın.",
+  "Could not save": "Kaydedilemedi"
 }
