@@ -27,15 +27,8 @@
   "background": {
     "service_worker": "background/service-worker.js"
   },
-  "content_scripts": [
-    {
-      "matches": [
-        "https://web.readest.com/*",
-        "https://*.readest.com/*",
-        "http://localhost:3000/*"
-      ],
-      "js": ["content/auth-bridge.js"],
-      "run_at": "document_idle"
-    }
-  ]
+  "options_ui": {
+    "page": "options/options.html",
+    "open_in_tab": false
+  }
 }

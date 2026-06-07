@@ -19,6 +19,7 @@ module.exports = (_env, argv) => {
       'content/capture': './src/content/capture.ts',
       'content/auth-bridge': './src/content/auth-bridge.ts',
       'popup/popup': './src/popup/popup.ts',
+      'options/options': './src/options/options.ts',
       // Output the offscreen bundle flat at `dist/offscreen.js` so the
       // offscreen.html copied next to it can reference it as `offscreen.js`.
       offscreen: './src/offscreen/offscreen.ts',
@@ -77,6 +78,7 @@ module.exports = (_env, argv) => {
         patterns: [
           { from: 'manifest.json', to: 'manifest.json' },
           { from: 'popup.html', to: 'popup/popup.html' },
+          { from: 'options.html', to: 'options/options.html' },
           { from: 'offscreen.html', to: 'offscreen.html' },
           { from: 'icons', to: 'icons', noErrorOnMissing: true },
           // `_locales/<lang>/messages.json` is Chrome's native i18n

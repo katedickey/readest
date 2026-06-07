@@ -1669,8 +1669,10 @@
   "Highlight Current Sentence": "Tô sáng câu hiện tại",
   "Could not reach server": "Không thể kết nối đến máy chủ",
   "Not a Readest server": "Không phải máy chủ Readest",
-  "Server found! Press Save to apply — the app will reload.": "Đã tìm thấy máy chủ! Nhấn Lưu để áp dụng — ứng dụng sẽ tải lại.",
-  "This will remove the server configuration and reload the app. Press Save to confirm.": "Thao tác này sẽ xóa cấu hình máy chủ và tải lại ứng dụng. Nhấn Lưu để xác nhận.",
   "Custom Server…": "Máy chủ tùy chỉnh…",
-  "Custom Server": "Máy chủ tùy chỉnh"
+  "Custom Server": "Máy chủ tùy chỉnh",
+  "Server found. Press Save to confirm (you will be signed out).": "Đã tìm thấy máy chủ. Nhấn Lưu để xác nhận (bạn sẽ bị đăng xuất).",
+  "Server found. Press Save to confirm.": "Đã tìm thấy máy chủ. Nhấn Lưu để xác nhận.",
+  "This will remove the custom server. Press Save to confirm (you will be signed out).": "Thao tác này sẽ xóa máy chủ tùy chỉnh. Nhấn Lưu để xác nhận (bạn sẽ bị đăng xuất).",
+  "This will remove the custom server. Press Save to confirm.": "Thao tác này sẽ xóa máy chủ tùy chỉnh. Nhấn Lưu để xác nhận."
 }

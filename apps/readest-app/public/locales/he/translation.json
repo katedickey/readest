@@ -1735,8 +1735,10 @@
   "Highlight Current Sentence": "הדגשת המשפט הנוכחי",
   "Could not reach server": "לא ניתן להגיע לשרת",
   "Not a Readest server": "אינו שרת Readest",
-  "Server found! Press Save to apply — the app will reload.": "השרת נמצא! לחץ שמור להחלה — האפליקציה תיטען מחדש.",
-  "This will remove the server configuration and reload the app. Press Save to confirm.": "פעולה זו תסיר את תצורת השרת ותטען מחדש את האפליקציה. לחץ שמור לאישור.",
   "Custom Server…": "שרת מותאם אישית…",
-  "Custom Server": "שרת מותאם אישית"
+  "Custom Server": "שרת מותאם אישית",
+  "Server found. Press Save to confirm (you will be signed out).": "השרת נמצא. לחץ על שמור כדי לאשר (תתנתק).",
+  "Server found. Press Save to confirm.": "השרת נמצא. לחץ על שמור כדי לאשר.",
+  "This will remove the custom server. Press Save to confirm (you will be signed out).": "פעולה זו תסיר את השרת המותאם אישית. לחץ על שמור כדי לאשר (תתנתק).",
+  "This will remove the custom server. Press Save to confirm.": "פעולה זו תסיר את השרת המותאם אישית. לחץ על שמור כדי לאשר."
 }

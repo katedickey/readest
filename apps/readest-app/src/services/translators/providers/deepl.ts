@@ -6,8 +6,6 @@ import { getSubscriptionPlan, getTranslationQuota } from '@/utils/access';
 import { normalizeToShortLang } from '@/utils/lang';
 import { saveDailyUsage } from '../utils';
 
-const DEEPL_API_ENDPOINT = getAPIBaseUrl() + '/deepl/translate';
-
 export const deeplProvider: TranslationProvider = {
   name: 'deepl',
   label: _('DeepL'),
@@ -46,7 +44,11 @@ export const deeplProvider: TranslationProvider = {
 
     const quota = getTranslationQuota(userPlan);
     try {
-      const response = await fetch(DEEPL_API_ENDPOINT, { method: 'POST', headers, body });
+      const response = await fetch(getAPIBaseUrl() + '/deepl/translate', {
+        method: 'POST',
+        headers,
+        body,
+      });
 
       if (!response.ok) {
         const data = await response.json();

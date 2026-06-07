@@ -1669,8 +1669,10 @@
   "Highlight Current Sentence": "ད་ལྟའི་ཚིག་གྲུབ་ལ་འོག་ཐིག་གཏོང་།",
   "Could not reach server": "སྤྱི་ཁུལ་སྒྲིག་ཆས་ལ་འཚམས་མི་ཐུབ།",
   "Not a Readest server": "Readest ཀྱི་སྤྱི་ཁུལ་སྒྲིག་ཆས་མིན།",
-  "Server found! Press Save to apply — the app will reload.": "སྤྱི་ཁུལ་སྒྲིག་ཆས་རྙེད་སོང་། ཉར་ཚགས་གནང་ནས་སྒྲིག་འཇུག་བྱེད་རྒྱུ — མཉེན་ཆས་ཡང་བསྐྱར་འཇུག་རུང་གི་རེད།",
-  "This will remove the server configuration and reload the app. Press Save to confirm.": "འདིས་སྤྱི་ཁུལ་སྒྲིག་ཆས་ཀྱི་བཀོད་སྒྲིག་བཤིག་ནས་མཉེན་ཆས་ཡང་བསྐྱར་འཇུག་རུང་གི་རེད། གཏན་ཁེལ་གནང་བར་ཉར་ཚགས་གནང་རོགས།",
   "Custom Server…": "ལོགས་སུ་སྒྲིག་པའི་སྤྱི་ཁུལ་སྒྲིག་ཆས…",
-  "Custom Server": "ལོགས་སུ་སྒྲིག་པའི་སྤྱི་ཁུལ་སྒྲིག་ཆས"
+  "Custom Server": "ལོགས་སུ་སྒྲིག་པའི་སྤྱི་ཁུལ་སྒྲིག་ཆས",
+  "Server found. Press Save to confirm (you will be signed out).": "ཞབས་ཞུ་བ་རྙེད་སོང་། གཏན་འཁེལ་བྱེད་པར་ཉར་ཚགས་གནོན། (ཁྱེད་ནས་ཐོན་ངེས་རེད།)",
+  "Server found. Press Save to confirm.": "ཞབས་ཞུ་བ་རྙེད་སོང་། གཏན་འཁེལ་བྱེད་པར་ཉར་ཚགས་གནོན།",
+  "This will remove the custom server. Press Save to confirm (you will be signed out).": "འདིས་སྲོལ་སྒྲིག་ཞབས་ཞུ་བ་སུབ་ངེས། གཏན་འཁེལ་བྱེད་པར་ཉར་ཚགས་གནོན། (ཁྱེད་ནས་ཐོན་ངེས་རེད།)",
+  "This will remove the custom server. Press Save to confirm.": "འདིས་སྲོལ་སྒྲིག་ཞབས་ཞུ་བ་སུབ་ངེས། གཏན་འཁེལ་བྱེད་པར་ཉར་ཚགས་གནོན།"
 }

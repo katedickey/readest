@@ -1,8 +1,10 @@
 import clsx from 'clsx';
 import { useState } from 'react';
+import { useAuth } from '@/context/AuthContext';
 import { useEnv } from '@/context/EnvContext';
 import { useTranslation } from '@/hooks/useTranslation';
 import { useSettingsStore } from '@/store/settingsStore';
+import { wipeAuthCredentials } from '@/helpers/auth';
 import { saveSysSettings } from '@/helpers/settings';
 import { CustomServerSettings } from '@/types/settings';
 import { SectionTitle } from './primitives';
@@ -35,6 +37,7 @@ const normalizeServerUrl = (url: string): string => url.trim().replace(/\/+$/, '
 const CustomServerForm = ({ onClose }: CustomServerFormProps) => {
   const _ = useTranslation();
   const { envConfig } = useEnv();
+  const { user } = useAuth();
   const { settings } = useSettingsStore();
 
   const savedUrl = settings.customServer?.serverUrl ?? '';
@@ -79,6 +82,10 @@ const CustomServerForm = ({ onClose }: CustomServerFormProps) => {
       } catch {
         // ignore
       }
+      // Any existing session is tied to the custom server's Supabase
+      // project and won't validate against the default one. Wipe first so
+      // the post-reload AuthContext doesn't briefly surface a stale user.
+      await wipeAuthCredentials();
       window.location.reload();
       return;
     }
@@ -102,6 +109,10 @@ const CustomServerForm = ({ onClose }: CustomServerFormProps) => {
     } catch {
       // localStorage may be unavailable; settings.customServer is the source of truth.
     }
+    // The new server is a different Supabase project — the old token is
+    // worthless against it. Wipe before the reload so the next session
+    // starts clean.
+    await wipeAuthCredentials();
     window.location.reload();
   };
 
@@ -171,15 +182,19 @@ const CustomServerForm = ({ onClose }: CustomServerFormProps) => {
 
       {discovered && (
         <div className='card eink-bordered border-base-200 bg-base-100 border px-4 py-3 text-sm'>
-          {_('Server found! Press Save to apply — the app will reload.')}
+          {user
+            ? _('Server found. Press Save to confirm (you will be signed out).')
+            : _('Server found. Press Save to confirm.')}
         </div>
       )}
 
       {confirmClear && (
         <div className='card eink-bordered border-base-200 bg-base-100 border px-4 py-3 text-sm'>
-          {_(
-            'This will remove the server configuration and reload the app. Press Save to confirm.',
-          )}
+          {user
+            ? _(
+                'This will remove the custom server. Press Save to confirm (you will be signed out).',
+              )
+            : _('This will remove the custom server. Press Save to confirm.')}
         </div>
       )}
 

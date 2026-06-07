@@ -1,4 +1,5 @@
 import { READEST_WEB_BASE_URL, SHARE_BASE_URL, SHARE_TOKEN_LENGTH } from '@/services/constants';
+import { useSettingsStore } from '@/store/settingsStore';
 
 export interface ShareDeepLink {
   token: string;
@@ -11,9 +12,35 @@ const TOKEN_RE = new RegExp(`^[A-Za-z0-9]{${SHARE_TOKEN_LENGTH}}$`);
 
 const isValidToken = (raw: unknown): raw is string => typeof raw === 'string' && TOKEN_RE.test(raw);
 
+/**
+ * Custom-server-aware base URL for outbound + inbound share URLs. When the
+ * user has configured a custom server in Settings → Custom Server, share
+ * links should round-trip through that server so a self-hosted instance
+ * does not silently emit URLs that point at the official site.
+ *
+ * Returns null when no custom server is set, or when the store hasn't been
+ * hydrated yet (early-boot calls fall back to the official base).
+ */
+const getCustomServerBase = (): string | null => {
+  try {
+    const url = useSettingsStore.getState().settings?.customServer?.serverUrl;
+    if (typeof url === 'string' && url.length > 0) {
+      return url.replace(/\/+$/, '');
+    }
+  } catch {
+    // Store may not be hydrated yet in unusual boot orders.
+  }
+  return null;
+};
+
 // Canonical share URL embedded in the dialog, share sheet, and any "copy link"
-// affordance. Always points at the public web target.
-export const buildShareUrl = (token: string): string => `${SHARE_BASE_URL}/${token}`;
+// affordance. Points at the user's custom server when one is configured;
+// otherwise the public web target.
+export const buildShareUrl = (token: string): string => {
+  const customBase = getCustomServerBase();
+  if (customBase) return `${customBase}/s/${token}`;
+  return `${SHARE_BASE_URL}/${token}`;
+};
 
 // Parses both the custom-scheme and HTTPS forms used by the deeplink ingress.
 //   readest://share/{token}
@@ -45,9 +72,19 @@ export const parseShareDeepLink = (url: string): ShareDeepLink | null => {
 };
 
 const isWebReadestHost = (host: string): boolean => {
-  // Matches the production host and any preview domain Readest may serve from.
-  // Conservative: accepts only the exact production host or a *.readest.com
-  // subdomain so a third-party site cannot impersonate a share URL.
+  // Matches the production host, any preview domain Readest may serve from,
+  // and — when set — the user's configured custom-server host so self-hosted
+  // share URLs round-trip into the native app. Conservative: third-party hosts
+  // are still rejected unless they exactly match the configured custom server.
   if (host === new URL(READEST_WEB_BASE_URL).host) return true;
-  return host.endsWith('.readest.com');
+  if (host.endsWith('.readest.com')) return true;
+  const customBase = getCustomServerBase();
+  if (customBase) {
+    try {
+      if (host === new URL(customBase).host) return true;
+    } catch {
+      // Malformed customServer.serverUrl — treat as unset.
+    }
+  }
+  return false;
 };

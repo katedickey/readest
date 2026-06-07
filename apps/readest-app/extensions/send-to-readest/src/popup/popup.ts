@@ -9,8 +9,7 @@
 
 import type { ClipProgress, ClipRequest, StatusRequest, StatusResponse } from '../lib/messages';
 import { localizeDom, translate as _ } from '../lib/i18n';
-
-const LOGIN_URL = 'https://web.readest.com/';
+import { getReadestBase } from '../lib/baseUrl';
 
 localizeDom();
 
@@ -151,8 +150,11 @@ sendBtn.addEventListener('click', async () => {
   await chrome.runtime.sendMessage(request).catch(() => undefined);
 });
 
-openReadestBtn.addEventListener('click', () => {
-  chrome.tabs.create({ url: LOGIN_URL });
+openReadestBtn.addEventListener('click', async () => {
+  // Resolve at click time so a freshly-saved options-page change takes
+  // effect without closing/reopening the popup.
+  const base = await getReadestBase();
+  chrome.tabs.create({ url: `${base}/` });
 });
 
 chrome.runtime.onMessage.addListener((message: unknown): void => {

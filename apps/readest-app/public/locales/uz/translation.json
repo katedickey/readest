@@ -1702,8 +1702,10 @@
   "Highlight Current Sentence": "Joriy jumlani ajratib ko'rsatish",
   "Could not reach server": "Serverga ulanib bo'lmadi",
   "Not a Readest server": "Bu Readest serveri emas",
-  "Server found! Press Save to apply — the app will reload.": "Server topildi! Qo'llash uchun Saqlash tugmasini bosing — ilova qayta yuklanadi.",
-  "This will remove the server configuration and reload the app. Press Save to confirm.": "Bu server konfiguratsiyasini olib tashlab, ilovani qayta yuklaydi. Tasdiqlash uchun Saqlash tugmasini bosing.",
   "Custom Server…": "Maxsus server…",
-  "Custom Server": "Maxsus server"
+  "Custom Server": "Maxsus server",
+  "Server found. Press Save to confirm (you will be signed out).": "Server topildi. Tasdiqlash uchun Saqlash tugmasini bosing (tizimdan chiqarilasiz).",
+  "Server found. Press Save to confirm.": "Server topildi. Tasdiqlash uchun Saqlash tugmasini bosing.",
+  "This will remove the custom server. Press Save to confirm (you will be signed out).": "Bu maxsus serverni olib tashlaydi. Tasdiqlash uchun Saqlash tugmasini bosing (tizimdan chiqarilasiz).",
+  "This will remove the custom server. Press Save to confirm.": "Bu maxsus serverni olib tashlaydi. Tasdiqlash uchun Saqlash tugmasini bosing."
 }

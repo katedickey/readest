@@ -1702,8 +1702,10 @@
   "Highlight Current Sentence": "برجسته‌سازی جملهٔ فعلی",
   "Could not reach server": "اتصال به سرور ممکن نیست",
   "Not a Readest server": "این یک سرور Readest نیست",
-  "Server found! Press Save to apply — the app will reload.": "سرور پیدا شد! برای اعمال، ذخیره را فشار دهید — برنامه مجدداً بارگذاری می‌شود.",
-  "This will remove the server configuration and reload the app. Press Save to confirm.": "این کار پیکربندی سرور را حذف کرده و برنامه را مجدداً بارگذاری می‌کند. برای تأیید، ذخیره را فشار دهید.",
   "Custom Server…": "سرور سفارشی…",
-  "Custom Server": "سرور سفارشی"
+  "Custom Server": "سرور سفارشی",
+  "Server found. Press Save to confirm (you will be signed out).": "سرور پیدا شد. برای تأیید ذخیره را فشار دهید (از حساب شما خارج می‌شود).",
+  "Server found. Press Save to confirm.": "سرور پیدا شد. برای تأیید ذخیره را فشار دهید.",
+  "This will remove the custom server. Press Save to confirm (you will be signed out).": "این کار سرور سفارشی را حذف می‌کند. برای تأیید ذخیره را فشار دهید (از حساب شما خارج می‌شود).",
+  "This will remove the custom server. Press Save to confirm.": "این کار سرور سفارشی را حذف می‌کند. برای تأیید ذخیره را فشار دهید."
 }

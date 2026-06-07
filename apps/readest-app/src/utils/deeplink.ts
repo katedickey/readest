@@ -1,9 +1,39 @@
 import { READEST_WEB_BASE_URL } from '@/services/constants';
+import { useSettingsStore } from '@/store/settingsStore';
 
 export type AnnotationDeepLink = {
   bookHash: string;
   noteId: string;
   cfi?: string;
+};
+
+/**
+ * Custom-server-aware base URL for annotation deep links. When the user has
+ * configured a custom server, links should round-trip through that server so
+ * a self-hosted instance doesn't silently emit URLs pointing at the official
+ * site. Returns null when no custom server is set (or the store hasn't been
+ * hydrated yet — early-boot callers fall back to the official base).
+ */
+const getCustomServerBase = (): string | null => {
+  try {
+    const url = useSettingsStore.getState().settings?.customServer?.serverUrl;
+    if (typeof url === 'string' && url.length > 0) {
+      return url.replace(/\/+$/, '');
+    }
+  } catch {
+    // Store may not be hydrated yet in unusual boot orders.
+  }
+  return null;
+};
+
+const getCustomServerHost = (): string | null => {
+  const base = getCustomServerBase();
+  if (!base) return null;
+  try {
+    return new URL(base).host;
+  } catch {
+    return null;
+  }
 };
 
 /**
@@ -21,7 +51,8 @@ const ANNOTATION_PATH_PREFIX = '/o/book/';
  * landing page at /o/book/{hash}/annotation/{id}.
  */
 export const buildAnnotationWebUrl = ({ bookHash, noteId, cfi }: AnnotationDeepLink): string => {
-  const base = `${READEST_WEB_BASE_URL}${ANNOTATION_PATH_PREFIX}${bookHash}/annotation/${noteId}`;
+  const origin = getCustomServerBase() ?? READEST_WEB_BASE_URL;
+  const base = `${origin}${ANNOTATION_PATH_PREFIX}${bookHash}/annotation/${noteId}`;
   return cfi ? `${base}?cfi=${encodeURIComponent(cfi)}` : base;
 };
 
@@ -58,9 +89,9 @@ export const parseAnnotationDeepLink = (url: string): AnnotationDeepLink | null 
   }
 
   const isCustomScheme = parsed.protocol === 'readest:';
-  const isWebHost =
-    (parsed.protocol === 'https:' || parsed.protocol === 'http:') &&
-    parsed.host === 'web.readest.com';
+  const isHttpish = parsed.protocol === 'https:' || parsed.protocol === 'http:';
+  const customHost = getCustomServerHost();
+  const isWebHost = isHttpish && (parsed.host === 'web.readest.com' || parsed.host === customHost);
   if (!isCustomScheme && !isWebHost) return null;
 
   // For readest:// URLs the URL parser stores the first path segment in the

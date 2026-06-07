@@ -8,38 +8,22 @@
 
 import type { ClipErrorCode } from '../lib/messages';
 import { translate as _ } from '../lib/i18n';
+import { getReadestBase } from '../lib/baseUrl';
 
-const DEFAULT_API_BASE = 'https://web.readest.com';
 const INBOX_FILE_PATH = '/api/send/inbox/file';
 
 /**
- * Compute the full upload endpoint URL. Reads `readestApiBase` from
- * `chrome.storage.local` so a developer can point the extension at a
- * local server via:
- *
- *     chrome.storage.local.set({ readestApiBase: 'http://localhost:3000' });
- *
- * This is called from the service worker — `chrome.storage` is reliable
- * there. The offscreen page receives the resolved URL as a parameter so
- * it never touches `chrome.storage` itself (some Chrome builds expose
- * `chrome.runtime` to an offscreen document while leaving
+ * Compute the full upload endpoint URL. Reads the configured server base
+ * from `chrome.storage.local` (set via the extension options page) so
+ * a self-hoster can point the extension at their own server. Called from
+ * the service worker — the offscreen page receives the resolved URL as a
+ * parameter so it never touches `chrome.storage` itself (some Chrome builds
+ * expose `chrome.runtime` to an offscreen document while leaving
  * `chrome.storage` undefined until the page has been alive for a beat).
  */
 export async function resolveUploadEndpoint(): Promise<string> {
-  try {
-    if (chrome?.storage?.local) {
-      const stored = (await chrome.storage.local.get('readestApiBase')) as {
-        readestApiBase?: unknown;
-      };
-      const base = stored.readestApiBase;
-      if (typeof base === 'string' && /^https?:\/\//.test(base)) {
-        return `${base.replace(/\/$/, '')}${INBOX_FILE_PATH}`;
-      }
-    }
-  } catch (err) {
-    console.warn('[send-to-readest/upload] could not read readestApiBase', err);
-  }
-  return `${DEFAULT_API_BASE}${INBOX_FILE_PATH}`;
+  const base = await getReadestBase();
+  return `${base}${INBOX_FILE_PATH}`;
 }
 
 export interface UploadResult {

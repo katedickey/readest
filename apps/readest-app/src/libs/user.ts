@@ -2,8 +2,6 @@ import { getAPIBaseUrl } from '@/services/environment';
 import { getUserID } from '@/utils/access';
 import { fetchWithAuth } from '@/utils/fetch';
 
-const API_ENDPOINT = getAPIBaseUrl() + '/user/delete';
-
 export const deleteUser = async () => {
   try {
     const userId = await getUserID();
@@ -11,7 +9,7 @@ export const deleteUser = async () => {
       throw new Error('Not authenticated');
     }
 
-    await fetchWithAuth(API_ENDPOINT, {
+    await fetchWithAuth(getAPIBaseUrl() + '/user/delete', {
       method: 'DELETE',
     });
   } catch (error) {

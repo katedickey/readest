@@ -1702,8 +1702,10 @@
   "Highlight Current Sentence": "বর্তমান বাক্য হাইলাইট করুন",
   "Could not reach server": "সার্ভারে পৌঁছানো যাচ্ছে না",
   "Not a Readest server": "এটি Readest সার্ভার নয়",
-  "Server found! Press Save to apply — the app will reload.": "সার্ভার পাওয়া গেছে! প্রয়োগ করতে সংরক্ষণ করুন চাপুন — অ্যাপটি পুনরায় লোড হবে।",
-  "This will remove the server configuration and reload the app. Press Save to confirm.": "এটি সার্ভার কনফিগারেশন মুছে দেবে এবং অ্যাপটি পুনরায় লোড করবে। নিশ্চিত করতে সংরক্ষণ করুন চাপুন।",
   "Custom Server…": "কাস্টম সার্ভার…",
-  "Custom Server": "কাস্টম সার্ভার"
+  "Custom Server": "কাস্টম সার্ভার",
+  "Server found. Press Save to confirm (you will be signed out).": "সার্ভার পাওয়া গেছে। নিশ্চিত করতে সংরক্ষণ চাপুন (আপনাকে সাইন আউট করা হবে)।",
+  "Server found. Press Save to confirm.": "সার্ভার পাওয়া গেছে। নিশ্চিত করতে সংরক্ষণ চাপুন।",
+  "This will remove the custom server. Press Save to confirm (you will be signed out).": "এটি কাস্টম সার্ভার সরিয়ে ফেলবে। নিশ্চিত করতে সংরক্ষণ চাপুন (আপনাকে সাইন আউট করা হবে)।",
+  "This will remove the custom server. Press Save to confirm.": "এটি কাস্টম সার্ভার সরিয়ে ফেলবে। নিশ্চিত করতে সংরক্ষণ চাপুন।"
 }

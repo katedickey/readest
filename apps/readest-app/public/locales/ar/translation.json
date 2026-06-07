@@ -1834,8 +1834,10 @@
   "Highlight Current Sentence": "تمييز الجملة الحالية",
   "Could not reach server": "تعذّر الوصول إلى الخادم",
   "Not a Readest server": "ليس خادم Readest",
-  "Server found! Press Save to apply — the app will reload.": "تم العثور على الخادم! اضغط حفظ للتطبيق — سيتم إعادة تحميل التطبيق.",
-  "This will remove the server configuration and reload the app. Press Save to confirm.": "سيؤدي هذا إلى إزالة تكوين الخادم وإعادة تحميل التطبيق. اضغط حفظ للتأكيد.",
   "Custom Server…": "خادم مخصص…",
-  "Custom Server": "خادم مخصص"
+  "Custom Server": "خادم مخصص",
+  "Server found. Press Save to confirm (you will be signed out).": "تم العثور على الخادم. اضغط على حفظ للتأكيد (سيتم تسجيل خروجك).",
+  "Server found. Press Save to confirm.": "تم العثور على الخادم. اضغط على حفظ للتأكيد.",
+  "This will remove the custom server. Press Save to confirm (you will be signed out).": "سيؤدي هذا إلى إزالة الخادم المخصص. اضغط على حفظ للتأكيد (سيتم تسجيل خروجك).",
+  "This will remove the custom server. Press Save to confirm.": "سيؤدي هذا إلى إزالة الخادم المخصص. اضغط على حفظ للتأكيد."
 }

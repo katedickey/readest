@@ -1702,8 +1702,10 @@
   "Highlight Current Sentence": "Geçerli cümleyi vurgula",
   "Could not reach server": "Sunucuya ulaşılamadı",
   "Not a Readest server": "Readest sunucusu değil",
-  "Server found! Press Save to apply — the app will reload.": "Sunucu bulundu! Uygulamak için Kaydet'e basın — uygulama yeniden yüklenecek.",
-  "This will remove the server configuration and reload the app. Press Save to confirm.": "Bu, sunucu yapılandırmasını kaldıracak ve uygulamayı yeniden yükleyecek. Onaylamak için Kaydet'e basın.",
   "Custom Server…": "Özel sunucu…",
-  "Custom Server": "Özel sunucu"
+  "Custom Server": "Özel sunucu",
+  "Server found. Press Save to confirm (you will be signed out).": "Sunucu bulundu. Onaylamak için Kaydet'e basın (oturumunuz kapatılacak).",
+  "Server found. Press Save to confirm.": "Sunucu bulundu. Onaylamak için Kaydet'e basın.",
+  "This will remove the custom server. Press Save to confirm (you will be signed out).": "Bu, özel sunucuyu kaldıracak. Onaylamak için Kaydet'e basın (oturumunuz kapatılacak).",
+  "This will remove the custom server. Press Save to confirm.": "Bu, özel sunucuyu kaldıracak. Onaylamak için Kaydet'e basın."
 }

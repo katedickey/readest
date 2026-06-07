@@ -1,5 +1,13 @@
 import { NextRequest, NextResponse } from 'next/server';
 
+// Self-hosters set EXTRA_CORS_ORIGINS to a comma-separated list of additional
+// allowed origins (e.g. "https://my-readest.example.com,https://app.example.com").
+// Empty / unset → no additions. Whitespace around entries is trimmed.
+const extraAllowedOrigins = (process.env['EXTRA_CORS_ORIGINS'] ?? '')
+  .split(',')
+  .map((s) => s.trim())
+  .filter(Boolean);
+
 const allowedOrigins = [
   'https://web.readest.com',
   'https://tauri.localhost',
@@ -7,6 +15,7 @@ const allowedOrigins = [
   'http://localhost:3000',
   'http://localhost:3001',
   'tauri://localhost',
+  ...extraAllowedOrigins,
 ];
 
 const corsOptions = {

@@ -1735,8 +1735,10 @@
   "Highlight Current Sentence": "Evidenzia la frase corrente",
   "Could not reach server": "Impossibile raggiungere il server",
   "Not a Readest server": "Non è un server Readest",
-  "Server found! Press Save to apply — the app will reload.": "Server trovato! Premi Salva per applicare — l'app verrà ricaricata.",
-  "This will remove the server configuration and reload the app. Press Save to confirm.": "Questo rimuoverà la configurazione del server e ricaricherà l'app. Premi Salva per confermare.",
   "Custom Server…": "Server personalizzato…",
-  "Custom Server": "Server personalizzato"
+  "Custom Server": "Server personalizzato",
+  "Server found. Press Save to confirm (you will be signed out).": "Server trovato. Premi Salva per confermare (verrai disconnesso).",
+  "Server found. Press Save to confirm.": "Server trovato. Premi Salva per confermare.",
+  "This will remove the custom server. Press Save to confirm (you will be signed out).": "Questa azione rimuoverà il server personalizzato. Premi Salva per confermare (verrai disconnesso).",
+  "This will remove the custom server. Press Save to confirm.": "Questa azione rimuoverà il server personalizzato. Premi Salva per confermare."
 }

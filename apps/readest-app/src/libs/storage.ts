@@ -11,14 +11,17 @@ import {
   ProgressPayload,
 } from '@/utils/transfer';
 
-const API_ENDPOINTS = {
+// Endpoints are resolved lazily so a custom-server override applied after
+// page boot (via setBaseUrlOverride) is honoured. Capturing at module load
+// would freeze the URLs to the build-time default.
+const apiEndpoints = () => ({
   upload: getAPIBaseUrl() + '/storage/upload',
   download: getAPIBaseUrl() + '/storage/download',
   delete: getAPIBaseUrl() + '/storage/delete',
   stats: getAPIBaseUrl() + '/storage/stats',
   list: getAPIBaseUrl() + '/storage/list',
   purge: getAPIBaseUrl() + '/storage/purge',
-};
+});
 
 export const createProgressHandler = (
   totalFiles: number,
@@ -47,7 +50,7 @@ export const uploadFile = async (
   temp = false,
 ) => {
   try {
-    const response = await fetchWithAuth(API_ENDPOINTS.upload, {
+    const response = await fetchWithAuth(apiEndpoints().upload, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -91,7 +94,7 @@ export const uploadReplicaFile = async (
   onProgress?: ProgressHandler,
 ) => {
   try {
-    const response = await fetchWithAuth(API_ENDPOINTS.upload, {
+    const response = await fetchWithAuth(apiEndpoints().upload, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -126,7 +129,7 @@ export const batchGetDownloadUrls = async (files: { lfp: string; cfp: string }[]
     }
     const filePaths = files.map((file) => file.cfp);
     const fileKeys = filePaths.map((path) => `${userId}/${path}`);
-    const response = await fetchWithAuth(`${API_ENDPOINTS.download}`, {
+    const response = await fetchWithAuth(`${apiEndpoints().download}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -179,7 +182,7 @@ export const downloadFile = async ({
       }
       const fileKey = `${userId}/${cfp}`;
       const response = await fetchWithAuth(
-        `${API_ENDPOINTS.download}?fileKey=${encodeURIComponent(fileKey)}`,
+        `${apiEndpoints().download}?fileKey=${encodeURIComponent(fileKey)}`,
         {
           method: 'GET',
         },
@@ -226,7 +229,7 @@ export const deleteFile = async (filePath: string) => {
     }
 
     const fileKey = `${userId}/${filePath}`;
-    await fetchWithAuth(`${API_ENDPOINTS.delete}?fileKey=${encodeURIComponent(fileKey)}`, {
+    await fetchWithAuth(`${apiEndpoints().delete}?fileKey=${encodeURIComponent(fileKey)}`, {
       method: 'DELETE',
     });
   } catch (error) {
@@ -250,7 +253,7 @@ export interface StorageStats {
 
 export const getStorageStats = async (): Promise<StorageStats> => {
   try {
-    const response = await fetchWithAuth(API_ENDPOINTS.stats, {
+    const response = await fetchWithAuth(apiEndpoints().stats, {
       method: 'GET',
     });
 
@@ -300,8 +303,8 @@ export const listFiles = async (params?: ListFilesParams): Promise<ListFilesResp
     if (params?.search) queryParams.set('search', params.search);
 
     const url = queryParams.toString()
-      ? `${API_ENDPOINTS.list}?${queryParams.toString()}`
-      : API_ENDPOINTS.list;
+      ? `${apiEndpoints().list}?${queryParams.toString()}`
+      : apiEndpoints().list;
 
     const response = await fetchWithAuth(url, {
       method: 'GET',
@@ -338,7 +341,7 @@ export const purgeFiles = async (
       fileKeys = filePathsOrKeys.map((path) => `${userId}/${path}`);
     }
 
-    const response = await fetchWithAuth(API_ENDPOINTS.purge, {
+    const response = await fetchWithAuth(apiEndpoints().purge, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',

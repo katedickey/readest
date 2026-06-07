@@ -1702,8 +1702,10 @@
   "Highlight Current Sentence": "தற்போதைய வாக்கியத்தை தனிப்படுத்து",
   "Could not reach server": "சேவையகத்தை அடைய முடியவில்லை",
   "Not a Readest server": "Readest சேவையகம் இல்லை",
-  "Server found! Press Save to apply — the app will reload.": "சேவையகம் கண்டுபிடிக்கப்பட்டது! பயன்படுத்த சேமி அழுத்துங்கள் — ஆப் மீண்டும் ஏற்றப்படும்.",
-  "This will remove the server configuration and reload the app. Press Save to confirm.": "இது சேவையக உள்ளமைவை நீக்கி ஆப்பை மீண்டும் ஏற்றும். உறுதிப்படுத்த சேமி அழுத்துங்கள்.",
   "Custom Server…": "தனிப்பயன் சேவையகம்…",
-  "Custom Server": "தனிப்பயன் சேவையகம்"
+  "Custom Server": "தனிப்பயன் சேவையகம்",
+  "Server found. Press Save to confirm (you will be signed out).": "சர்வர் கண்டறியப்பட்டது. உறுதிசெய்ய சேமிக்கவும் என்பதை அழுத்தவும் (நீங்கள் வெளியேற்றப்படுவீர்கள்).",
+  "Server found. Press Save to confirm.": "சர்வர் கண்டறியப்பட்டது. உறுதிசெய்ய சேமிக்கவும் என்பதை அழுத்தவும்.",
+  "This will remove the custom server. Press Save to confirm (you will be signed out).": "இது தனிப்பயன் சர்வரை அகற்றும். உறுதிசெய்ய சேமிக்கவும் என்பதை அழுத்தவும் (நீங்கள் வெளியேற்றப்படுவீர்கள்).",
+  "This will remove the custom server. Press Save to confirm.": "இது தனிப்பயன் சர்வரை அகற்றும். உறுதிசெய்ய சேமிக்கவும் என்பதை அழுத்தவும்."
 }

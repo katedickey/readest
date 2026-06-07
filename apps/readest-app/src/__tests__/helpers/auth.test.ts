@@ -4,17 +4,19 @@ import type { User, AuthError } from '@supabase/supabase-js';
 // Mock supabase before importing the module under test
 const mockSetSession = vi.fn();
 const mockGetUser = vi.fn();
+const mockSignOut = vi.fn(async () => ({ error: null }));
 
 vi.mock('@/utils/supabase', () => ({
   supabase: {
     auth: {
       setSession: (...args: unknown[]) => mockSetSession(...args),
       getUser: () => mockGetUser(),
+      signOut: () => mockSignOut(),
     },
   },
 }));
 
-import { handleAuthCallback } from '@/helpers/auth';
+import { handleAuthCallback, wipeAuthCredentials } from '@/helpers/auth';
 
 describe('handleAuthCallback', () => {
   let mockLogin: ReturnType<typeof vi.fn<(accessToken: string, user: User) => void>>;
@@ -236,5 +238,57 @@ describe('handleAuthCallback', () => {
         refresh_token: 'my-refresh-token',
       });
     });
+  });
+});
+
+describe('wipeAuthCredentials', () => {
+  beforeEach(() => {
+    localStorage.clear();
+    mockSignOut.mockClear();
+    mockSignOut.mockResolvedValue({ error: null });
+  });
+
+  afterEach(() => {
+    localStorage.clear();
+  });
+
+  it('calls supabase.auth.signOut to revoke server-side', async () => {
+    await wipeAuthCredentials();
+    expect(mockSignOut).toHaveBeenCalledOnce();
+  });
+
+  it('removes the AuthContext keys from localStorage', async () => {
+    localStorage.setItem('token', 'jwt-abc');
+    localStorage.setItem('refresh_token', 'refresh-abc');
+    localStorage.setItem('user', JSON.stringify({ id: 'u1' }));
+    await wipeAuthCredentials();
+    expect(localStorage.getItem('token')).toBeNull();
+    expect(localStorage.getItem('refresh_token')).toBeNull();
+    expect(localStorage.getItem('user')).toBeNull();
+  });
+
+  it('removes every sb-<project-ref>-auth-token entry', async () => {
+    localStorage.setItem('sb-default-auth-token', JSON.stringify({ access_token: 'a' }));
+    localStorage.setItem('sb-my-readest-auth-token', JSON.stringify({ access_token: 'b' }));
+    // Unrelated keys must be preserved — wipe is auth-scoped.
+    localStorage.setItem('readest.customServer', '{"supabaseUrl":"https://x"}');
+    localStorage.setItem('readest:lastImportFolder', '/books');
+
+    await wipeAuthCredentials();
+
+    expect(localStorage.getItem('sb-default-auth-token')).toBeNull();
+    expect(localStorage.getItem('sb-my-readest-auth-token')).toBeNull();
+    expect(localStorage.getItem('readest.customServer')).toBe('{"supabaseUrl":"https://x"}');
+    expect(localStorage.getItem('readest:lastImportFolder')).toBe('/books');
+  });
+
+  it('still runs the local wipe when signOut rejects (old server unreachable)', async () => {
+    localStorage.setItem('token', 'jwt-abc');
+    localStorage.setItem('sb-old-auth-token', 'whatever');
+    mockSignOut.mockRejectedValueOnce(new Error('network down'));
+
+    await expect(wipeAuthCredentials()).resolves.toBeUndefined();
+    expect(localStorage.getItem('token')).toBeNull();
+    expect(localStorage.getItem('sb-old-auth-token')).toBeNull();
   });
 });

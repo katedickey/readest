@@ -32,8 +32,28 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       const uploadUrl = await getUploadSignedUrl(fileKey, fileSize, 1800, bucketName);
       const downloadUrl = await getDownloadSignedUrl(fileKey, 3 * 86400, bucketName);
       const pathname = new URL(downloadUrl).pathname;
-      const publicBaseUrl = READEST_PUBLIC_STORAGE_BASE_URL;
-      const publicDownloadUrl = `${publicBaseUrl}${pathname.replace(`/${bucketName}`, '')}`;
+      // Build the public (unsigned) URL Discord (and any other CDN consumer
+      // of the share-preview cover) will fetch.
+      //
+      // Resolution order:
+      //   1. PUBLIC_STORAGE_BASE_URL — explicit override pointing at a host
+      //      that already maps the bucket *root* to `/` (CDN alias, R2
+      //      custom domain, Garage `s3_web` vhost endpoint, nginx rewrite).
+      //      Bucket segment is stripped from the path.
+      //   2. S3_PUBLIC_ENDPOINT — browser-reachable S3 endpoint where signed
+      //      URLs are path-style (`/bucket/key`). Bucket segment is kept.
+      //   3. READEST_PUBLIC_STORAGE_BASE_URL — the official deployment's R2
+      //      alias on storage.readest.com. Bucket stripped (same shape as #1).
+      const publicBaseUrl = process.env['PUBLIC_STORAGE_BASE_URL'];
+      const s3PublicEndpoint = process.env['S3_PUBLIC_ENDPOINT'];
+      let publicDownloadUrl: string;
+      if (publicBaseUrl) {
+        publicDownloadUrl = `${publicBaseUrl.replace(/\/+$/, '')}${pathname.replace(`/${bucketName}`, '')}`;
+      } else if (s3PublicEndpoint) {
+        publicDownloadUrl = `${s3PublicEndpoint.replace(/\/+$/, '')}${pathname}`;
+      } else {
+        publicDownloadUrl = `${READEST_PUBLIC_STORAGE_BASE_URL}${pathname.replace(`/${bucketName}`, '')}`;
+      }
       return res.status(200).json({
         uploadUrl,
         downloadUrl: publicDownloadUrl,

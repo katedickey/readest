@@ -28,8 +28,18 @@ import type {
 } from '../lib/messages';
 import { readToken } from '../lib/auth';
 import { translate as _ } from '../lib/i18n';
+import { getReadestHost } from '../lib/baseUrl';
+import { installAuthBridgeStorageWatcher, syncAuthBridgeRegistration } from './authBridge';
 import { setBadge } from './badge';
 import { clipAndUploadViaOffscreen } from './offscreen';
+
+// Register the auth-bridge content script for the user's configured server
+// (plus the default readest.com hosts). Runs every SW startup — Chrome
+// invalidates dynamic registrations after some upgrades, so re-registering
+// on each boot keeps the bridge alive. Storage watcher then handles live
+// changes from the options page without restart.
+void syncAuthBridgeRegistration();
+installAuthBridgeStorageWatcher();
 
 const LOG = '[send-to-readest/sw]';
 
@@ -146,7 +156,8 @@ async function runClip(tabId: number): Promise<void> {
 
     const stored = await readToken();
     if (!stored) {
-      return emitError('not-signed-in', _('Sign in at web.readest.com first'));
+      const host = await getReadestHost();
+      return emitError('not-signed-in', _('Sign in at {host} first', { host }));
     }
 
     setBadge('cap');
