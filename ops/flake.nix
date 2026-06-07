@@ -85,6 +85,7 @@
           openssl
           pango
           zlib
+          glib-networking
         ] ++ (optionals (!isDarwin) [
           webkitgtk_4_1
         ]) ++ (optionals isDarwin [
@@ -115,6 +116,10 @@
               {
                 name = "LIBRARY_PATH";
                 value = libPath;
+              }
+              {
+                name = "GIO_MODULE_DIR";
+                value = "${pkgs.glib-networking}/lib/gio/modules/";
               }
             ] ++ (optionals isDarwin [
               {
